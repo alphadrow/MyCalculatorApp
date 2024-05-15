@@ -110,7 +110,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/plus"
+        android:id="@+id/buttonPlus"
         android:layout_width="wrap_content"
         android:layout_height="120dp"
         android:text="+"
@@ -120,7 +120,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/minus"
+        android:id="@+id/buttonMinus"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:text="-"
@@ -130,7 +130,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/division"
+        android:id="@+id/buttonDivide"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:text="/"
@@ -140,7 +140,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/multiply"
+        android:id="@+id/buttonMultiply"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:text="\u02DF"
@@ -151,7 +151,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/equals"
+        android:id="@+id/buttonEquals"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:text="="
