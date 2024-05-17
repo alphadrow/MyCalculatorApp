@@ -1,8 +1,35 @@
 package ru.alphadrow.gb.mycalculatorapp;
-public class Calculator {
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+public class Calculator implements Parcelable {
     private String displayNumber;
     private int result;
     private int currentNumber;
+
+    protected Calculator(Parcel in) {
+        displayNumber = in.readString();
+        result = in.readInt();
+        currentNumber = in.readInt();
+    }
+
+    protected Calculator(){}
+
+    public static final Creator<Calculator> CREATOR = new Creator<Calculator>() {
+        @Override
+        public Calculator createFromParcel(Parcel in) {
+            return new Calculator(in);
+        }
+
+        @Override
+        public Calculator[] newArray(int size) {
+            return new Calculator[size];
+        }
+    };
+
     public String getCurrentNumber(){
        return String.valueOf(currentNumber);
     }
@@ -10,6 +37,18 @@ public class Calculator {
 
     public String getDisplayNumber() {
         return displayNumber;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeString(displayNumber);
+        dest.writeInt(result);
+        dest.writeInt(currentNumber);
     }
 
     enum action {
