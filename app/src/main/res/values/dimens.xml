@@ -3,4 +3,5 @@
     <dimen name="button_height">60dp</dimen>
     <dimen name="text_size">40sp</dimen>
     <dimen name="big_button_size">120dp</dimen>
+    <dimen name="big_button_size_land">130sp</dimen>
 </resources>
