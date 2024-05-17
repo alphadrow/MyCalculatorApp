@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="button_height">60dp</dimen>
-    <dimen name="textViewSize">40sp</dimen>
+    <dimen name="text_size">40sp</dimen>
+    <dimen name="big_button_size">120dp</dimen>
 </resources>

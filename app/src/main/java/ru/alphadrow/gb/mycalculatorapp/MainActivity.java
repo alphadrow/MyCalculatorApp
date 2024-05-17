@@ -3,6 +3,7 @@ package ru.alphadrow.gb.mycalculatorapp;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button buttonMultiply;
     Button buttonDivision;
     Button buttonEquals;
+    TextView textView;
 
 
     @Override
@@ -31,49 +33,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = v.getId();
         if (id == R.id._0) {
             calculator.append(0);
-        }
-        if (id == R.id._1) {
+        } else if (id == R.id._1) {
             calculator.append(1);
-        }
-        if (id == R.id._2) {
+        } else if (id == R.id._2) {
             calculator.append(2);
-        }
-        if (id == R.id._3) {
+        } else if (id == R.id._3) {
             calculator.append(3);
-        }
-        if (id == R.id._4) {
+        } else if (id == R.id._4) {
             calculator.append(4);
-        }
-        if (id == R.id._5) {
+        } else if (id == R.id._5) {
             calculator.append(5);
-        }
-        if (id == R.id._6) {
+        } else if (id == R.id._6) {
             calculator.append(6);
-        }
-        if (id == R.id._7) {
+        } else if (id == R.id._7) {
             calculator.append(7);
-        }
-        if (id == R.id._8) {
+        } else if (id == R.id._8) {
             calculator.append(8);
-        }
-        if (id == R.id._9) {
+        } else if (id == R.id._9) {
             calculator.append(9);
-        }
-        if (id == R.id.buttonPlus) {
+        } else if (id == R.id.buttonPlus) {
             calculator.plus();
-        }
-        if (id == R.id.buttonMinus) {
+        } else if (id == R.id.buttonMinus) {
             calculator.minus();
-        }
-        if (id == R.id.buttonMultiply) {
+        } else if (id == R.id.buttonMultiply) {
             calculator.multiply();
-        }
-        if (id == R.id.buttonDivide) {
+        } else if (id == R.id.buttonDivide) {
             calculator.divide();
-        }
-        if (id == R.id.buttonEquals) {
+        } else if (id == R.id.buttonEquals) {
             calculator.myEquals();
         }
+        textView.setText(calculator.getDisplayNumber());
+
     }
 
     private void setContent() {
@@ -110,5 +100,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonMultiply = findViewById(R.id.buttonMultiply);
         buttonDivision = findViewById(R.id.buttonDivide);
         buttonEquals = findViewById(R.id.buttonEquals);
+        textView = findViewById(R.id.mainView);
     }
 }
