@@ -8,7 +8,7 @@
     android:background="@drawable/mosaic"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/one"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/two"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/three"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
@@ -38,7 +38,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/four"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
@@ -48,7 +48,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline10"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/five"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
@@ -58,7 +58,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/six"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
@@ -69,7 +69,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/seven"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
@@ -79,7 +79,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/eight"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
@@ -89,7 +89,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline10"
         app:layout_constraintTop_toTopOf="@+id/guideline"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/nine"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
@@ -99,7 +99,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="@+id/guideline3"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/zero"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
@@ -109,7 +109,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toTopOf="@+id/guideline3"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonPlus"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/big_button_size_land"
@@ -119,7 +119,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline11"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonMinus"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
@@ -129,7 +129,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="@+id/guideline3"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonDivide"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/middleButtonHeight"
@@ -138,7 +138,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonMultiply"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/middleButtonHeight"
@@ -149,7 +149,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="@+id/buttonPlus" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonEquals"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
