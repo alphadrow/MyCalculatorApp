@@ -6,17 +6,19 @@ import android.os.Parcelable;
 import androidx.annotation.NonNull;
 
 public class Calculator implements Parcelable {
+    boolean isNumberEntered;
     private String displayNumber;
-    private int result;
+    private int previousNumber;
     private int currentNumber;
 
     protected Calculator(Parcel in) {
         displayNumber = in.readString();
-        result = in.readInt();
+        previousNumber = in.readInt();
         currentNumber = in.readInt();
     }
 
-    protected Calculator(){}
+    protected Calculator() {
+    }
 
     public static final Creator<Calculator> CREATOR = new Creator<Calculator>() {
         @Override
@@ -30,10 +32,7 @@ public class Calculator implements Parcelable {
         }
     };
 
-    public String getCurrentNumber(){
-       return String.valueOf(currentNumber);
-    }
-    action currentAction = action.NONE;
+    Action currentAction = Action.NONE;
 
     public String getDisplayNumber() {
         return displayNumber;
@@ -47,71 +46,80 @@ public class Calculator implements Parcelable {
     @Override
     public void writeToParcel(@NonNull Parcel dest, int flags) {
         dest.writeString(displayNumber);
-        dest.writeInt(result);
+        dest.writeInt(previousNumber);
         dest.writeInt(currentNumber);
     }
 
-    enum action {
+    enum Action {
         DIVIDE,
         MINUS,
         MULTIPLY,
         PLUS,
         NONE
     }
+
     public void plus() {
         doCalc();
-        currentAction = action.PLUS;
+        currentAction = Action.PLUS;
     }
 
     public void minus() {
         doCalc();
-        currentAction = action.MINUS;
+        currentAction = Action.MINUS;
     }
 
     public void multiply() {
         doCalc();
-        currentAction = action.MULTIPLY;
+        currentAction = Action.MULTIPLY;
     }
 
-    public void  divide() {
+    public void divide() {
         doCalc();
-        currentAction = action.DIVIDE;
+        currentAction = Action.DIVIDE;
     }
 
     public void myEquals() {
         doCalc();
-        displayNumber = String.valueOf(result);
+        currentAction = Action.NONE;
     }
 
 
     public void append(int i) {
         currentNumber = currentNumber * 10 + i;
         displayNumber = String.valueOf(currentNumber);
+        isNumberEntered = true;
     }
 
-    public String getResult(){
-        return String.valueOf(result);
+    public String getResult() {
+        return String.valueOf(previousNumber);
     }
+
     private void doCalc() {
-        switch (currentAction) {
-            case PLUS:
-                result += currentNumber;
-                break;
-            case MINUS:
-                result -= currentNumber;
-                break;
-            case MULTIPLY:
-                result *= currentNumber;
-                break;
-            case DIVIDE:
-                result /= currentNumber;
-                break;
-            case NONE:
-                result = currentNumber;
-                break;
+        if (isNumberEntered) {
+            switch (currentAction) {
+                case PLUS:
+                    previousNumber = previousNumber + currentNumber;
+                    break;
+                case MINUS:
+                    previousNumber = previousNumber - currentNumber;
+                    break;
+                case MULTIPLY:
+                    previousNumber = previousNumber * currentNumber;
+                    break;
+                case DIVIDE:
+                    if (currentNumber != 0) {
+                        previousNumber = previousNumber / currentNumber;
+                    }
+                    break;
+                case NONE:
+                    previousNumber = currentNumber;
+                    break;
+            }
+            currentNumber = 0;
+            isNumberEntered = false;
         }
-        currentNumber = 0;
-        displayNumber = String.valueOf(result);
+        displayNumber = String.valueOf(previousNumber);
+
     }
 
 }

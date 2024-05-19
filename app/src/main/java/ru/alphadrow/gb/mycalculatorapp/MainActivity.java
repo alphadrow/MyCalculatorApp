@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -34,8 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        calculator = new Calculator();
         super.onCreate(savedInstanceState);
+        calculator = new Calculator();
         setContentView(R.layout.activity_main);
         initView();
         setContent();
@@ -43,39 +42,52 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        if (id == R.id._0) {
+        if (id == R.id.zero) {
             calculator.append(0);
-        } else if (id == R.id._1) {
+        }
+        if (id == R.id.one) {
             calculator.append(1);
-        } else if (id == R.id._2) {
+        }
+        if (id == R.id.two) {
             calculator.append(2);
-        } else if (id == R.id._3) {
+        }
+        if (id == R.id.three) {
             calculator.append(3);
-        } else if (id == R.id._4) {
+        }
+        if (id == R.id.four) {
             calculator.append(4);
-        } else if (id == R.id._5) {
+        }
+        if (id == R.id.five) {
             calculator.append(5);
-        } else if (id == R.id._6) {
+        }
+        if (id == R.id.six) {
             calculator.append(6);
-        } else if (id == R.id._7) {
+        }
+        if (id == R.id.seven) {
             calculator.append(7);
-        } else if (id == R.id._8) {
+        }
+        if (id == R.id.eight) {
             calculator.append(8);
-        } else if (id == R.id._9) {
+        }
+        if (id == R.id.nine) {
             calculator.append(9);
-        } else if (id == R.id.buttonPlus) {
+        }
+        if (id == R.id.buttonPlus) {
             calculator.plus();
-        } else if (id == R.id.buttonMinus) {
+        }
+        if (id == R.id.buttonMinus) {
             calculator.minus();
-        } else if (id == R.id.buttonMultiply) {
+        }
+        if (id == R.id.buttonMultiply) {
             calculator.multiply();
-        } else if (id == R.id.buttonDivide) {
+        }
+        if (id == R.id.buttonDivide) {
             calculator.divide();
-        } else if (id == R.id.buttonEquals) {
+        }
+        if (id == R.id.buttonEquals) {
             calculator.myEquals();
         }
         textView.setText(calculator.getDisplayNumber());
@@ -83,16 +95,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void setContent() {
-        buttons[0].setOnClickListener(this);
-        buttons[1].setOnClickListener(this);
-        buttons[2].setOnClickListener(this);
-        buttons[3].setOnClickListener(this);
-        buttons[4].setOnClickListener(this);
-        buttons[5].setOnClickListener(this);
-        buttons[6].setOnClickListener(this);
-        buttons[7].setOnClickListener(this);
-        buttons[8].setOnClickListener(this);
-        buttons[9].setOnClickListener(this);
+        for (Button button : buttons) {
+            button.setOnClickListener(this);
+        }
         buttonPlus.setOnClickListener(this);
         buttonMinus.setOnClickListener(this);
         buttonMultiply.setOnClickListener(this);
@@ -102,16 +107,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
-        buttons[0] = findViewById(R.id._0);
-        buttons[1] = findViewById(R.id._1);
-        buttons[2] = findViewById(R.id._2);
-        buttons[3] = findViewById(R.id._3);
-        buttons[4] = findViewById(R.id._4);
-        buttons[5] = findViewById(R.id._5);
-        buttons[6] = findViewById(R.id._6);
-        buttons[7] = findViewById(R.id._7);
-        buttons[8] = findViewById(R.id._8);
-        buttons[9] = findViewById(R.id._9);
+        buttons[0] = findViewById(R.id.zero);
+        buttons[1] = findViewById(R.id.one);
+        buttons[2] = findViewById(R.id.two);
+        buttons[3] = findViewById(R.id.three);
+        buttons[4] = findViewById(R.id.four);
+        buttons[5] = findViewById(R.id.five);
+        buttons[6] = findViewById(R.id.six);
+        buttons[7] = findViewById(R.id.seven);
+        buttons[8] = findViewById(R.id.eight);
+        buttons[9] = findViewById(R.id.nine);
         buttonPlus = findViewById(R.id.buttonPlus);
         buttonMinus = findViewById(R.id.buttonMinus);
         buttonMultiply = findViewById(R.id.buttonMultiply);

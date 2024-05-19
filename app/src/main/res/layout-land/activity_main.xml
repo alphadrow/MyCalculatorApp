@@ -9,60 +9,60 @@
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/_1"
+        android:id="@+id/one"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
-        android:text="@string/one"
+        android:text="@string/numberOne"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/_2"
+        android:id="@+id/two"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
-        android:text="@string/two"
+        android:text="@string/numberTwo"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/_3"
+        android:id="@+id/three"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
-        android:text="@string/three"
+        android:text="@string/numberThree"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/_4"
+        android:id="@+id/four"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
-        android:text="@string/four"
+        android:text="@string/numberFour"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintStart_toStartOf="@+id/guideline10"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/_5"
+        android:id="@+id/five"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
-        android:text="@string/five"
+        android:text="@string/numberFive"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/_6"
+        android:id="@+id/six"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
-        android:text="@string/six"
+        android:text="@string/numberSix"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintHorizontal_bias="0.431"
@@ -70,40 +70,40 @@
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/_7"
+        android:id="@+id/seven"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
-        android:text="@string/seven"
+        android:text="@string/numberSeven"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/_8"
+        android:id="@+id/eight"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
-        android:text="@string/eight"
+        android:text="@string/numberEight"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintStart_toStartOf="@+id/guideline10"
         app:layout_constraintTop_toTopOf="@+id/guideline"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/_9"
+        android:id="@+id/nine"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
-        android:text="@string/nine"
+        android:text="@string/numberNine"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
         app:layout_constraintTop_toTopOf="@+id/guideline3"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/_0"
+        android:id="@+id/zero"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/button_height"
-        android:text="@string/zero"
+        android:text="@string/numberZero"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toStartOf="@+id/guideline6"
         app:layout_constraintStart_toStartOf="@+id/guideline6"
@@ -132,23 +132,22 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonDivide"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/button_height"
+        android:layout_height="@dimen/middleButtonHeight"
         android:text="@string/divide"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonMultiply"
         android:layout_width="wrap_content"
-        android:layout_height="@dimen/button_height"
+        android:layout_height="@dimen/middleButtonHeight"
         android:text="@string/multiply"
         android:textSize="50sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+        app:layout_constraintTop_toTopOf="@+id/buttonPlus" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonEquals"
@@ -167,11 +166,11 @@
         android:layout_weight="1"
         android:background="@color/white"
         android:gravity="end"
-        android:text="@string/_0"
+        android:text="@string/numberZero"
         android:textSize="@dimen/text_size"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="@+id/buttonMultiply"
-        app:layout_constraintStart_toStartOf="@+id/_1"
+        app:layout_constraintStart_toStartOf="@+id/one"
         app:layout_constraintTop_toTopOf="@+id/guideline9" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -250,6 +249,5 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.68" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
