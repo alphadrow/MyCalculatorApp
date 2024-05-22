@@ -15,5 +15,8 @@
     <string name="numberThree">3</string>
     <string name="numberTwo">2</string>
     <string name="numberOne">1</string>
+    <string name="settings">settings</string>
+    <string name="schemePurple">schemePurple</string>
+    <string name="schemeOrange">schemeOrange</string>
 </resources>
 
