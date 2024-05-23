@@ -1,5 +1,7 @@
 package ru.alphadrow.gb.mycalculatorapp;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,11 +14,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Calculator calculator;
     Button[] buttons = new Button[10];
     Button buttonPlus;
+    static final int orangeTheme = 2;
+    static final int purpleTheme = 1;
     Button buttonMinus;
     Button buttonMultiply;
     Button buttonDivision;
     Button buttonEquals;
+    Button buttonSettings;
+    Button buttonClear;
     TextView textView;
+
+    static final String KEY_SP = "sp";
+    static final String KEY_CURRENT_THEME = "currentTheme";
+
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -24,6 +34,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         outState.putParcelable(TAG, calculator);
     }
 
+
+    public int getRealId(int currentTheme) {
+        switch (currentTheme){
+            case purpleTheme:
+                return R.style.PurpleTheme;
+            case orangeTheme:
+                return R.style.OrangeTheme;
+            default: return R.style.Base_Theme_MyCalculatorApp;
+        }
+    }
+    private int getCurrentTheme() {
+        SharedPreferences sp = getSharedPreferences(KEY_SP, MODE_PRIVATE);
+        return sp.getInt(KEY_CURRENT_THEME, -1);
+    }
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
@@ -35,12 +59,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         calculator = new Calculator();
+        setTheme(getRealId(getCurrentTheme()));
         setContentView(R.layout.activity_main);
         initView();
         setContent();
 
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        recreate();
+    }
 
     @Override
     public void onClick(View v) {
@@ -90,6 +120,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (id == R.id.buttonEquals) {
             calculator.myEquals();
         }
+        if (id == R.id.buttonClear){
+            calculator.clear();
+        }
+        if (id == R.id.buttonSettings) {
+            Intent i = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(i);
+        }
+
         textView.setText(calculator.getDisplayNumber());
 
     }
@@ -103,6 +141,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonMultiply.setOnClickListener(this);
         buttonDivision.setOnClickListener(this);
         buttonEquals.setOnClickListener(this);
+        buttonSettings.setOnClickListener(this);
+        buttonClear.setOnClickListener(this);
         textView.setText(calculator.getDisplayNumber());
     }
 
@@ -122,6 +162,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonMultiply = findViewById(R.id.buttonMultiply);
         buttonDivision = findViewById(R.id.buttonDivide);
         buttonEquals = findViewById(R.id.buttonEquals);
+        buttonSettings = findViewById(R.id.buttonSettings);
+        buttonClear = findViewById(R.id.buttonClear);
         textView = findViewById(R.id.mainView);
     }
 }
