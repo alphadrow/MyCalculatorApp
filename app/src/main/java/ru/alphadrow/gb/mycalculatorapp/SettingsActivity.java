@@ -1,6 +1,5 @@
 package ru.alphadrow.gb.mycalculatorapp;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
@@ -8,23 +7,34 @@ import android.widget.RadioButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SettingsActivity extends AppCompatActivity implements View.OnClickListener {
-    static final String KEY_SP = "sp";
-    static final String KEY_CURRENT_THEME = "currentTheme";
     static final int orangeTheme = 2;
     static final int purpleTheme = 1;
 
     RadioButton radioButtonSchemePurple;
     RadioButton radioButtonSchemeOrange;
 
+    SharedPreferencesRepository spRepo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(getRealId(getCurrentTheme()));
         super.onCreate(savedInstanceState);
+        initSharedPref();
+        setTheme(getRealId(getCurrentTheme()));
         setContentView(R.layout.activity_settings);
         initView();
-        setContent();
+        setContent(); //не самое удачное имя для метода. Да и действие скорее я бы к initView отнес.
     }
 
+    private void initSharedPref() {
+        spRepo = new SharedPreferencesRepository();
+        spRepo.init(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        spRepo.dispose();
+    }
 
     @Override
     public void onClick(View v) {
@@ -40,23 +50,21 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void setCurrentTheme(int currentTheme) {
-        SharedPreferences sp = getSharedPreferences(KEY_SP, MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putInt(KEY_CURRENT_THEME, currentTheme);
-        editor.apply();
+        spRepo.saveTheme(currentTheme);
     }
+
     private int getCurrentTheme() {
-        SharedPreferences sp = getSharedPreferences(KEY_SP, MODE_PRIVATE);
-        return sp.getInt(KEY_CURRENT_THEME, -1);
+        return spRepo.getThemeId();
     }
 
     public int getRealId(int currentTheme) {
-        switch (currentTheme){
+        switch (currentTheme) {
             case purpleTheme:
                 return R.style.PurpleTheme;
             case orangeTheme:
                 return R.style.OrangeTheme;
-            default: return R.style.Base_Theme_MyCalculatorApp;
+            default:
+                return R.style.Base_Theme_MyCalculatorApp;
         }
     }
 
@@ -65,8 +73,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         super.onPointerCaptureChanged(hasCapture);
     }
 
-    private void
-    setContent() {
+    private void setContent() {
         radioButtonSchemePurple.setOnClickListener(this);
         radioButtonSchemeOrange.setOnClickListener(this);
     }

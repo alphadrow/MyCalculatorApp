@@ -1,7 +1,6 @@
 package ru.alphadrow.gb.mycalculatorapp;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,10 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button buttonSettings;
     Button buttonClear;
     TextView textView;
-
-    static final String KEY_SP = "sp";
-    static final String KEY_CURRENT_THEME = "currentTheme";
-
+    SharedPreferencesRepository spRepo;
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -36,18 +32,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     public int getRealId(int currentTheme) {
-        switch (currentTheme){
+        switch (currentTheme) {
             case purpleTheme:
                 return R.style.PurpleTheme;
             case orangeTheme:
                 return R.style.OrangeTheme;
-            default: return R.style.Base_Theme_MyCalculatorApp;
+            default:
+                return R.style.Base_Theme_MyCalculatorApp;
         }
     }
+
     private int getCurrentTheme() {
-        SharedPreferences sp = getSharedPreferences(KEY_SP, MODE_PRIVATE);
-        return sp.getInt(KEY_CURRENT_THEME, -1);
+        return spRepo.getThemeId();
     }
+
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
@@ -59,11 +57,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         calculator = new Calculator();
+        initSharedPref();
         setTheme(getRealId(getCurrentTheme()));
         setContentView(R.layout.activity_main);
         initView();
         setContent();
+    }
 
+    private void initSharedPref() {
+        spRepo = new SharedPreferencesRepository();
+        spRepo.init(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        spRepo.dispose();
     }
 
     @Override
@@ -120,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (id == R.id.buttonEquals) {
             calculator.myEquals();
         }
-        if (id == R.id.buttonClear){
+        if (id == R.id.buttonClear) {
             calculator.clear();
         }
         if (id == R.id.buttonSettings) {
