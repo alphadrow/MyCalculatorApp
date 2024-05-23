@@ -50,6 +50,12 @@ public class Calculator implements Parcelable {
         dest.writeInt(currentNumber);
     }
 
+    public void clear() {
+        currentNumber = 0;
+        previousNumber = 0;
+        displayNumber = "0";
+    }
+
     enum Action {
         DIVIDE,
         MINUS,

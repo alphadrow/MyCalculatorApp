@@ -9,6 +9,7 @@
     <item name="colorPrimary">@color/orange</item>
     <item name="colorPrimaryVariant">@color/light_orange</item>
     <item name="colorOnPrimary">@color/white</item>
+    <item name="android:textSize">30sp</item>
 </style>
 
     <style name="PurpleTheme" parent="Base.Theme.MyCalculatorApp">
@@ -16,5 +17,6 @@
         <item name="colorPrimary">@color/design_default_color_primary_variant</item>
         <item name="colorPrimaryVariant">@color/design_default_color_primary</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="android:textSize">30sp</item>
     </style>
 </resources>

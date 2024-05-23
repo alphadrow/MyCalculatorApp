@@ -2,7 +2,6 @@ package ru.alphadrow.gb.mycalculatorapp;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 
@@ -51,7 +50,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         return sp.getInt(KEY_CURRENT_THEME, -1);
     }
 
-    private int getRealId(int currentTheme) {
+    public int getRealId(int currentTheme) {
         switch (currentTheme){
             case purpleTheme:
                 return R.style.PurpleTheme;
